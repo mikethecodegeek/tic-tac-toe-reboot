@@ -1,0 +1,169 @@
+html,body {
+    height:97%;
+    width:99%;
+}
+body {
+    background-color: black;
+    background-image: url("http://cdn.desktopwallpapers4.me/wallpapers/movies/1920x1080/1/6102-batman-1920x1080-movie-wallpaper.jpg");
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+}
+@keyframes drop {
+    from {
+        transform: scale(.5);
+    }
+    to {
+        transform: scale(1.0);
+    }
+}
+@keyframes slideIn {
+    from {
+        margin-left: -500%
+    }
+    to {
+        margin-left: 50$
+    }
+}
+img {
+    height:100%;
+    width: 100%;
+    z-index: 0;
+    animation-name: drop;
+    animation-duration: 1s;
+}
+.odd {
+    height: 22%;
+    width: 7%;
+    background-color: white;
+    padding: 1%;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    font-size: 90px;
+    vertical-align: top;
+    border-radius: 5%;
+    border: thin solid black;
+
+}
+.even {
+    height: 22%;
+    width: 7%;
+    background-color: white;
+    padding: 1%;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    font-size:90px;
+    vertical-align: top;
+    border-radius: 5%;
+    border: thin solid black;
+}
+#s1 {
+    display: inline-block;
+    margin-left: 35%;
+
+}
+
+#s2 {
+    display: inline-block;
+
+
+}
+
+#s3{
+    display: inline-block;
+
+
+}
+
+#s4 {
+    display: inline-block;
+    margin-left: 35%;
+
+
+}
+
+#s5 {
+  display: inline-block;
+
+}
+
+#s6 {
+    display: inline-block;
+}
+
+#s7 {
+    display: inline-block;
+    margin-left: 35%;
+
+}
+
+#s8{
+    display: inline-block;
+
+}
+
+#s9 {
+    display: inline-block;
+}
+
+
+.sep {
+
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+#game {
+    height: 15%;
+    width: 100%;
+    font-size: 100%;
+    font-family: cursive;
+    text-align: center;
+    color: silver;
+    vertical-align: top;
+
+
+
+}
+#controls {
+    height: 100px;
+    width: 100%;
+    vertical-align: middle;
+    padding-left: 40%;
+
+}
+.buttons {
+    height: 50%;
+    width: 10%;
+    text-align: center;
+    color: snow;
+    font-family: serif;
+    display: inline;
+    font-size: 100%;
+    margin: auto;
+    border: outset;
+    border-radius: 10%;
+    background-color: black;
+}
+#board {
+
+}
+#playx {
+    display: inline-block;
+}
+#playo{
+    display: inline-block;
+}
+#container {
+    margin-top: 1%;
+    height: 60%;
+    width: 100%;
+    margin-bottom: 5px;
+
+}
