@@ -122,7 +122,7 @@ function board() {
                 // console.log(squares[winningCombos]);
                 return 1;
             }
-            if (squares[(winningCombos[i][0])-1] == returnCompPlayer() && squares[(winningCombos[i][1])-1] == returnCompPlayer() && squares[(winningCombos[i][2])-1] == returnCompPlayer()){
+            else if (squares[(winningCombos[i][0])-1] == returnCompPlayer() && squares[(winningCombos[i][1])-1] == returnCompPlayer() && squares[(winningCombos[i][2])-1] == returnCompPlayer()){
                 $('#game').html('Computer Wins! ');
                 $('#playx').show();
                 $('#playo').show();
@@ -130,18 +130,22 @@ function board() {
                 // console.log(squares[winningCombos]);
                 return -1;
             }
-            else if (checkFreeSquares().length == 0) {
-                $('#game').html('Tie!');
-                $('#playx').show();
-                $('#playo').show();
+              //  console.log(checkFreeSquares().length)
 
-                // console.log(squares[winningCombos]);
-                return 0;
-            }
             else {
                 i++;
                 //return false;
             }
+
+        }
+        if (checkFreeSquares().length == 0) {
+            $('#game').html('Tie!');
+            $('#playx').show();
+            $('#playo').show();
+
+
+            // console.log(squares[winningCombos]);
+            return 0;
         }
     };
 }
@@ -182,13 +186,8 @@ pickWinningSquare = function() {
     //console.log(free);
     var squarepicked = false;
     var turn = playerTurn();
-    //idealSquares[1]='O';
-   // idealSquares[2]='3';
-    //console.log(returnBoard());
-    //console.log(idealSquares);
         for (var z in free){
             var check1 = (free[z])-1;
-       // alert(free);
 
         var winningCombos = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
         var i = 0;
@@ -203,12 +202,8 @@ pickWinningSquare = function() {
             else {
                while (i < 8 && squarepicked == false) {
                    idealSquares[check1] = turn;
-                   //console.log(idealSquares);
                    if (idealSquares[(winningCombos[i][0]) - 1] == turn && idealSquares[(winningCombos[i][1]) - 1] == turn && idealSquares[(winningCombos[i][2]) - 1] == turn) {
-                       // console.log('Winner is ' + turn);
-                       // console.log(check1);
                        chooseSquare(check1 + 1);
-                       //console.log(idealSquares);
                        squarepicked = true;
                        return squarepicked;
                    }
@@ -216,7 +211,6 @@ pickWinningSquare = function() {
 
                        idealSquares[check1] = 99;
                        i++;
-                       //return false;
                    }
                }
            }
@@ -244,10 +238,7 @@ checkOppSquare = function() {
     else if (turn == 'O') {
         turn = 'X';
     }
-    //idealSquares[1]='O';
-    // idealSquares[2]='3';
-    //console.log(returnBoard());
-    //console.log(idealSquares);
+
     for (var z in free){
         var check1 = (free[z])-1;
 
@@ -256,12 +247,8 @@ checkOppSquare = function() {
         var i = 0;
         while (i < 8 && squarepicked == false) {
             idealSquares[check1] = turn;
-            //console.log(idealSquares);
             if (idealSquares[(winningCombos[i][0]) - 1] == turn && idealSquares[(winningCombos[i][1]) - 1] == turn && idealSquares[(winningCombos[i][2]) - 1] == turn) {
-                // console.log('Winner is ' + turn);
-                // console.log(check1);
                 chooseSquare(check1+1);
-                //console.log(idealSquares);
                 squarepicked=true;
                 return squarepicked;
             }
@@ -269,7 +256,6 @@ checkOppSquare = function() {
 
                 idealSquares[check1]= 99;
                 i++;
-                //return false;
             }
         }
 
